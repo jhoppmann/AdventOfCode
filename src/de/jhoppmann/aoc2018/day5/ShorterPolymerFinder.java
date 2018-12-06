@@ -1,5 +1,6 @@
 package de.jhoppmann.aoc2018.day5;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -8,13 +9,15 @@ public class ShorterPolymerFinder {
 
    public static void main( String[] args ) {
       String polymer = Input.input;
+      long t1 = new Date().getTime();
 
       for ( char c = 'a'; c <= 'z'; c++ ) {
          String first = String.valueOf(c);
          String second = first.toUpperCase();
          System.out.println(first + ": " + shortenPolymer(polymer, first, second));
       }
-
+      long t2 = new Date().getTime();
+      System.out.println(t2 - t1);
    }
 
    private static int shortenPolymer( String polymer, String remove1, String remove2 ) {
