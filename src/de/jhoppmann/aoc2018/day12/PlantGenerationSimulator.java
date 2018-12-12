@@ -10,6 +10,9 @@ public class PlantGenerationSimulator {
 
    public static void main( String[] args ) {
       System.out.println(calculateFor(20));
+
+      long result = (50000000000L - 2000) * 102 + 205377;
+      System.out.println(result);
    }
 
    private static long calculateFor(long generations) {
@@ -22,7 +25,6 @@ public class PlantGenerationSimulator {
       for (int i = 0; i < Input.getInitial().length; i++) {
          plants[i+offset] = Input.getInitial()[i];
       }
-
 
       for (long generation = 0; generation < generations; generation++){
          boolean[] newGen = new boolean[plants.length];
@@ -37,8 +39,13 @@ public class PlantGenerationSimulator {
             plants[i+offsetSize] = newGen[i];
          }
       }
+      return calcSum(offset, plants);
 
-      long sum = 0;
+
+   }
+
+   private static int calcSum( int offset, boolean[] plants ) {
+      int sum = 0;
       for (int i = 0; i<plants.length;i++) {
          if (plants[i]) {
             sum += i-offset;
