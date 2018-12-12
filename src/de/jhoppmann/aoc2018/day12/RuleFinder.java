@@ -14,8 +14,8 @@ public class RuleFinder {
    }
 
    public boolean getStatusInNextGen(boolean[] input) {
-      if (input.length > 5) {
-         throw new IllegalArgumentException("Input doesn't have the right size");
+      if (input.length != 5) {
+         throw new IllegalArgumentException("Input doesn't have the right size (" + input.length + ")");
       }
 
       for(Rule rule : rules) {

@@ -6,9 +6,15 @@ import java.util.Arrays;
 public class PlantGenerationSimulator {
 
    private static RuleFinder rf;
-   private static int        offset = 3;
+   private static int        offset = 30;
 
    public static void main( String[] args ) {
+      System.out.println(calculateFor(20));
+   }
+
+   private static long calculateFor(long generations) {
+      int offsetSize = 4;
+      int offset = offsetSize;
       rf = new RuleFinder(Input.rules);
 
       boolean[] plants = new boolean[2*offset + Input.getInitial().length];
@@ -17,12 +23,28 @@ public class PlantGenerationSimulator {
          plants[i+offset] = Input.getInitial()[i];
       }
 
-      System.out.println(arrayToString(plants));
 
-      for (int generation = 0; generation <= 20; generation++){
-         // do things here
+      for (long generation = 0; generation < generations; generation++){
+         boolean[] newGen = new boolean[plants.length];
 
+         for (int i = 2; i<plants.length-2;i++) {
+            newGen[i] = rf.getStatusInNextGen(Arrays.copyOfRange(plants, i-2,i+3));
+         }
+
+         offset += offsetSize;
+         plants = new boolean[2*offset + Input.getInitial().length];
+         for (int i = 0; i < newGen.length; i++) {
+            plants[i+offsetSize] = newGen[i];
+         }
       }
+
+      long sum = 0;
+      for (int i = 0; i<plants.length;i++) {
+         if (plants[i]) {
+            sum += i-offset;
+         }
+      }
+      return sum;
    }
 
    private static String arrayToString(boolean[] values) {
