@@ -5,14 +5,17 @@ import java.util.Arrays;
 
 public class GameOfTreeLife {
 
-   private static char[][] field = Input.getTestField();
+   private static char[][] field = Input.getField();
+
+   private static int[] generationsList = {10, 1000000000};
 
    public static void main( String[] args ) {
-      int generations = 10;
-      char[][] calculated = calculateGenerations(generations, field);
-      int allLumberyards = countAllLumberyards(calculated);
-      int allTrees = countAllTrees(calculated);
-      System.out.println(allLumberyards * allTrees);
+      for (int generations : generationsList) {
+         char[][] calculated = calculateGenerations(generations, field);
+         int allLumberyards = countAllLumberyards(calculated);
+         int allTrees = countAllTrees(calculated);
+         System.out.println(allLumberyards * allTrees);
+      }
    }
 
    private static int countAll(char[][] field, char character) {
@@ -36,18 +39,18 @@ public class GameOfTreeLife {
    }
 
    private static char[][] calculateGenerations( int generations, char[][] field ) {
-      char[][] nextGen = new char[field.length][field[0].length];
 
-      for (int i = 1; i <= generations; i++) {
+      for (int generation = 1; generation <= generations; generation++) {
+         char[][] nextGen = new char[field.length][field[0].length];
          for (int x = 0; x < field.length; x++) {
             for(int y = 0; y < field[x].length; y++) {
                nextGen[x][y] = getNextGenerationSymbol(field, x, y);
             }
          }
-         field = Arrays.copyOf(nextGen, nextGen.length);
-         System.out.println("After " + i + " minute:");
-         System.out.println(arrayToString(field));
+         field = nextGen;
       }
+      System.out.println("After " + generations + " minute:");
+      System.out.println(arrayToString(field));
       return field;
    }
 
