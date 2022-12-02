@@ -15,7 +15,7 @@ def run():
 
     all_reindeer = []
     for line in input_content:
-        split_line = line.split(" ")
+        split_line = line.split(' ')
         reindeer = {'name': split_line[0], 'speed': int(split_line[3]), 'duration': int(split_line[6]),
                     'rest': int(split_line[13]), 'cycle': int(split_line[6]) + int(split_line[13])}
         all_reindeer.append(reindeer)

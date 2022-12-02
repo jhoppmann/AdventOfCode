@@ -13,8 +13,8 @@ def main():
                 else:
                     ones[index] = 1
 
-    gamma = ""
-    epsilon = ""
+    gamma = ''
+    epsilon = ''
     for i in range(len(readings[0])):
         if ones[i] > (entries / 2):
             gamma += '1'

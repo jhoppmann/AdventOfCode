@@ -5,7 +5,7 @@ def main() -> None:
     result = 0
     for line in lines:
         numbers = {}
-        notes, output = line.split(" | ")
+        notes, output = line.split(' | ')
         output = output.split()
         notes = notes.split()
         for token in notes:
@@ -111,7 +111,7 @@ def order_all(segments: dict, segments_by_number: dict) -> dict:
 
 
 def to_number(output: list, ordered_representation: dict) -> int:
-    result_string = ""
+    result_string = ''
     for token in output:
         ordered = list(token)
         ordered.sort()

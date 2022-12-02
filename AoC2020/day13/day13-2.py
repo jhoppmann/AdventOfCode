@@ -29,7 +29,7 @@ def find_for_busses_and_offsets(busses:list, offsets:list) -> int:
         while multiplier <= sys.maxsize:
             if (multiplier * timestamp + offset) % bus == 0:
                 timestamp *= multiplier
-                print("bus " + str(bus), str(timestamp))
+                print('bus ' + str(bus), str(timestamp))
                 break
             multiplier += 1
     return timestamp

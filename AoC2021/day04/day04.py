@@ -54,7 +54,7 @@ def check_board(board: list) -> bool:
     for i in range(5):
         column = [x[i] for x in board]
         if count_hits(column) == 5:
-            print("Column!")
+            print('Column!')
             print(column)
             return True
     return False

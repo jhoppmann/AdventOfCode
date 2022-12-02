@@ -6,13 +6,13 @@ def main() -> None:
 
     insertion_rules = {}
     for line in input_data[2:]:
-        split = line.split(" -> ")
+        split = line.split(' -> ')
         insertion_rules[split[0]] = split[1]
 
     repetitions = 10
 
     for _ in range(repetitions):  # Brute force, because, oh well, why not
-        new_polymer = ""
+        new_polymer = ''
         for i in range(len(template)-1):
             lookup = template[i:i+2]
             new_polymer += lookup[0] + insertion_rules[lookup]

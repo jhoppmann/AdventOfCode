@@ -35,12 +35,12 @@ for i in range(0, len(busses)):
     thread = multiprocessing.Process(target=find_times, args=(0, busses[i], offsets[i], threads))
     threads.append(thread)
     thread.start()
-    print("Thread" + str(i) + " started")
+    print('Thread' + str(i) + ' started')
 
 for index, thread in enumerate(threads):
-    print(str(index) + " joined")
+    print(str(index) + ' joined')
     thread.join()
-    print(str(index) + " joined")
+    print(str(index) + ' joined')
 print(threads)
 
 rest = set()

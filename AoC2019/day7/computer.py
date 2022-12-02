@@ -59,7 +59,7 @@ def compute(codes: list, inputs: list = []) -> list:
         elif code == 3:
             target = int_codes[pointer + 1]
             if len(input_values) == 0:
-                int_codes[target] = input("Enter value for opcode 3: ")
+                int_codes[target] = input('Enter value for opcode 3: ')
             else:
                 int_codes[target] = input_values.pop(0)
             pointer += 2

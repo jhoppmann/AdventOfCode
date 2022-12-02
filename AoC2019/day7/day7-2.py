@@ -33,5 +33,5 @@ for permutation in inputs:
         output = compute(int_codes, input_values)
     maximum = max(maximum, output[0])
 
-print("-----------------------")
+print('-----------------------')
 print(maximum)

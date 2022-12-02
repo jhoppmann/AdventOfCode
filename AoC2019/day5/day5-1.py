@@ -83,7 +83,7 @@ while pointer < len(int_codes) - 1:
         pointer += 4
     elif code == 3:
         target = int_codes[pointer + 1]
-        int_codes[target] = input("Enter value for opcode 3: ")
+        int_codes[target] = input('Enter value for opcode 3: ')
         pointer += 2
     elif code == 4:
         target = int_codes[pointer + 1]

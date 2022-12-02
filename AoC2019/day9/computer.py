@@ -87,7 +87,7 @@ def compute(codes: list, inputs: list = []) -> list:
         elif code == 3:
             target = get_int_code(pointer + 1)
             if len(input_values) == 0:
-                set_int_code(get_value(target, first_mode), input("Enter value for opcode 3: "))
+                set_int_code(get_value(target, first_mode), input('Enter value for opcode 3: '))
             else:
                 set_int_code(get_value(target, first_mode), input_values.pop(0))
             pointer += 2

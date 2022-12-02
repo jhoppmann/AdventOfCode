@@ -24,7 +24,7 @@ def build_passports(passport_strings: list) -> list:
         for field in fields:
             split_field = field.split(':')
             if len(split_field) < 2:
-                print("ERROR", field)
+                print('ERROR', field)
             else:
                 passport[split_field[0]] = split_field[1]
         passport_list.append(passport)

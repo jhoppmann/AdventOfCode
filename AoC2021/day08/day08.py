@@ -4,7 +4,7 @@ def main() -> None:
 
     searched_for_digits = 0
     for line in lines:
-        notes, output = line.split(" | ")
+        notes, output = line.split(' | ')
         output = output.split()
         for token in output:
             if len(token) == 2 or len(token) == 3 or len(token) == 4 or len(token) == 7:

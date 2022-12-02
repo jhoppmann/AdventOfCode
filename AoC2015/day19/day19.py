@@ -6,7 +6,7 @@ def run():
         input_lines = file.readlines()
     rules = []
     for line in input_lines[0:-2]:
-        elements = line.split(" => ")
+        elements = line.split(' => ')
         rules.append((elements[0], elements[1][0:-1]))
 
     molecule = input_lines[-1]

@@ -4,7 +4,7 @@ def run():
 
         ingredients = []
         for line in input_content:
-            split_line = line.split(" ")
+            split_line = line.split(' ')
             ingredient = [int(split_line[2][:-1]),
                           int(split_line[4][:-1]),
                           int(split_line[6][:-1]),

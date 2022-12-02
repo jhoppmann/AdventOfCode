@@ -29,13 +29,13 @@ def compute_new(grid: list) -> list:
 
 def run():
     generations = 100
-    with open("input.txt") as file:
+    with open('input.txt') as file:
         input_content = file.readlines()
     grid = []
     for line in input_content:
         new_line = []
         for char in line:
-            new_line.append(char == "#")
+            new_line.append(char == '#')
         grid.append(new_line)
 
     for _ in range(generations):

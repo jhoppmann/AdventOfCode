@@ -9,7 +9,7 @@ def find_sue(values: dict, sues: dict) -> str:
 
 
 def run():
-    with open("input.txt") as file:
+    with open('input.txt') as file:
         input_content = file.read().splitlines()
 
     values = {'children': 3,
@@ -24,9 +24,9 @@ def run():
               'perfumes': 1}
     sues = {}
     for line in input_content:
-        line = line.replace(":", "")
-        line = line.replace(",", "")
-        split_lines = line.split(" ")
+        line = line.replace(':', '')
+        line = line.replace(',', '')
+        split_lines = line.split(' ')
         key = split_lines[1]
         known_things = {}
         for i in range(0, 3):
