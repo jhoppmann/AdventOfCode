@@ -29,8 +29,6 @@ def run():
                 score += 3
             elif values[hand_shapes[1]] == 6:
                 score += 1
-        print(score)
-
     print(score)
 
 
