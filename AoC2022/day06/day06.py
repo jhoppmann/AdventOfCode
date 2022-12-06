@@ -3,16 +3,16 @@ def run():
         databuffer = file.read().splitlines()[0]
 
     # Part 1
-    for index in range(0, len(databuffer) - 13):
-        if len(set(databuffer[index:index+4])) == 4:
-            print(index + 4)
-            break
+    print(find_different_character_substring(4, databuffer))
 
     # Part 2
-    for index in range(0, len(databuffer) - 13):
-        if len(set(databuffer[index:index+14])) == 14:
-            print(index + 14)
-            break
+    print(find_different_character_substring(14, databuffer))
+
+
+def find_different_character_substring(length: int, databuffer) -> int:
+    for index in range(0, len(databuffer) - length):
+        if len(set(databuffer[index:index + length])) == length:
+            return index + length
 
 
 if __name__ == '__main__':
