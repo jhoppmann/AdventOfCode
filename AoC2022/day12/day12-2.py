@@ -36,10 +36,8 @@ def dijkstra(grid: list, starting_point: tuple, target: tuple) -> dict:
     frontier.put((grid[starting_point[1]][starting_point[0]], starting_point))
     cost = {starting_point: 0}
     steps = {starting_point: 0}
-    while frontier:
-        if frontier.empty():
-            break
-        current = frontier.get(block=False)
+    while not frontier.empty():
+        current = frontier.get()
         if current[1] == target:
             break
         for neighbor in get_neighbors(grid, *current[1], grid[current[1][1]][current[1][0]]):

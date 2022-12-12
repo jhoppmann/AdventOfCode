@@ -28,7 +28,7 @@ def dijkstra(grid: list, starting_point: tuple, target: tuple) -> dict:
     frontier.put((grid[starting_point[1]][starting_point[0]], starting_point))
     cost = {starting_point: 0}
     steps = {starting_point: 0}
-    while frontier:
+    while not frontier.empty():
         current = frontier.get()
         if current[1] == target:
             break
