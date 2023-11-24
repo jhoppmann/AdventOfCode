@@ -1,7 +1,7 @@
 def run():
     with open("input.txt") as file:
         room_list = file.read().splitlines()
-    room_list = [(x[0:-10], x[-7:], int(x[-10:-7])) for x in room_list]
+    room_list = [(x[0:-11], x[-7:], int(x[-10:-7])) for x in room_list]
     correct_rooms_sums = 0
     correct_rooms = []
     for room in room_list:
@@ -38,11 +38,9 @@ def run():
             else:
                 new_character = c
             result += new_character
-        if result == 'northpole-object-storage-':
+        if result == 'northpole-object-storage':
             print("Part 2:", room[2])
 
-
-print (ord('`'))
 
 if __name__ == '__main__':
     run()
