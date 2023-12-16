@@ -32,5 +32,6 @@ def run():
     print("Part 1:", id_sum)
     print("Part 2:", power_sum)
 
+
 if __name__ == '__main__':
     run()
