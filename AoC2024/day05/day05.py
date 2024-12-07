@@ -16,25 +16,30 @@ def run():
 
     middles_sum = 0
     correct_orderings = process_rules(rules, orderings)
-    print(correct_orderings)
     for ordering in correct_orderings:
         middles_sum += ordering[int(len(ordering) / 2)]
 
-    print(middles_sum)
+    print("Part 1:", middles_sum)
 
-def process_rules(rules, orderings) -> list:
+
+def process_rules(rules: dict, orderings: list) -> list:
     correct_orderings = []
     for ordering in orderings:
-        correct = True
-        for i in range(0, len(ordering)):
-            if ordering[i] in rules:
-                mappings = rules[ordering[i]]
-                for mapping in mappings:
-                    if mapping in ordering and ordering.index(mapping) < i:
-                        correct = False
+        correct = process_rule(ordering, rules)
         if correct:
             correct_orderings.append(ordering)
     return correct_orderings
+
+
+def process_rule(ordering: list, rules: dict) -> bool:
+    correct = True
+    for i in range(0, len(ordering)):
+        if ordering[i] in rules:
+            mappings = rules[ordering[i]]
+            for mapping in mappings:
+                if mapping in ordering and ordering.index(mapping) < i:
+                    correct = False
+    return correct
 
 
 if __name__ == '__main__':
