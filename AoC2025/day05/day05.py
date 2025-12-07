@@ -13,6 +13,7 @@ def run():
         elif line:
             ids.append(int(line))
     id_ranges = merge_intervals(id_ranges)
+
     # Part 1
     for id in ids:
         for lower, upper in id_ranges:
